@@ -1,4 +1,4 @@
-# Last updated: 12/12/2025, 09:22:59
+# Last updated: 12/12/2025, 09:25:12
 1# The isBadVersion API is already defined for you.
 2# @param version, an integer
 3# @return a bool
@@ -12,14 +12,12 @@
 11        """
 12        beg=1
 13        end=n
-14        ans=-1
-15        while beg<=end:
-16            mid=(beg+end)//2
-17            if isBadVersion(mid)==False:
-18                beg=mid+1
-19            elif isBadVersion(mid)==True:   
-20                ans=mid
-21                end=mid-1
-22        return(ans)         
-23
-24        
+14        while beg<end:
+15            mid=(beg+end)//2
+16            if isBadVersion(mid)==False:
+17                beg=mid+1
+18            elif isBadVersion(mid)==True:   
+19                end=mid
+20        return(end)         
+21
+22        

@@ -1,4 +1,4 @@
-# Last updated: 19/12/2025, 19:04:39
+# Last updated: 20/12/2025, 22:31:40
 1# Definition for a binary tree node.
 2# class TreeNode(object):
 3#     def __init__(self, val=0, left=None, right=None):
@@ -13,11 +13,7 @@
 12        """
 13        if not root:
 14            return 0
-15        left=self.maxDepth(root.left)   
-16        right=self.maxDepth(root.right)  
+15        left=self.maxDepth(root.left)
+16        right=self.maxDepth(root.right)    
 17
-18        return 1+max(left,right)
-19    
-20    
-21
-22    
+18        return (1+max(left,right))

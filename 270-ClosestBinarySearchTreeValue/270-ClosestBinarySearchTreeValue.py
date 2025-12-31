@@ -1,4 +1,4 @@
-# Last updated: 30/12/2025, 23:10:12
+# Last updated: 31/12/2025, 21:54:41
 1# Definition for a binary tree node.
 2# class TreeNode(object):
 3#     def __init__(self, val=0, left=None, right=None):
@@ -12,13 +12,16 @@
 11        :type target: float
 12        :rtype: int
 13        """
-14        closest = root.val    
-15        while root:
-16            if abs(root.val-target) < abs(target-closest) or (abs(root.val-target) == abs(target-closest) and root.val<closest):
-17                closest=root.val
-18            if target<root.val:
-19                root=root.left
-20            else:
-21                root=root.right    
-22        return closest  
-23        
+14        closest=root.val
+15
+16        while root:
+17            if abs(root.val-target) < abs(closest-target) or abs(root.val-target) == abs(closest-target) and root.val<closest:
+18                closest = root.val
+19            if target < root.val:
+20                root=root.left
+21            else:
+22                root=root.right  
+23        return closest              
+24
+25
+26       

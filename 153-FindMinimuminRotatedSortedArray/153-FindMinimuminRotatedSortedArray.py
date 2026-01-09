@@ -1,4 +1,4 @@
-# Last updated: 09/01/2026, 21:05:35
+# Last updated: 09/01/2026, 21:06:00
 1class Solution(object):
 2    def findMin(self, nums):
 3
@@ -10,9 +10,11 @@
 9        end=len(nums)-1
 10        while beg<end:
 11            mid=(beg+end)//2
-12            if nums[mid] > nums[end]:
+12            if nums[mid]>nums[end]:
 13                beg=mid+1
-14            else:
+14            elif nums[mid]<nums[end]:
 15                end=mid
-16        return(nums[beg])        
-17        
+16
+17        return(nums[beg])    
+18
+19

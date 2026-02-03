@@ -1,4 +1,4 @@
-# Last updated: 03/02/2026, 17:50:36
+# Last updated: 03/02/2026, 17:50:51
 1class Solution(object):
 2    def moveZeroes(self, nums):
 3        """
@@ -11,3 +11,4 @@
 10                nums[f],nums[s]=nums[s],nums[f]
 11                s+=1
 12            f+=1    
+13        return(nums)    

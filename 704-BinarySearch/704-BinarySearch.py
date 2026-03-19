@@ -1,4 +1,4 @@
-# Last updated: 27/02/2026, 20:11:04
+# Last updated: 19/03/2026, 15:08:18
 1class Solution(object):
 2    def search(self, nums, target):
 3        """
@@ -10,10 +10,11 @@
 9        end=len(nums)-1
 10        while beg<=end:
 11            mid=(beg+end)//2
-12            if nums[mid] == target:
-13                return (mid)
-14            elif nums[mid]>target:
-15                end=mid-1
+12            if nums[mid]==target:
+13                return(mid)
+14            elif nums[mid]<target:
+15                beg=mid+1
 16            else:
-17                beg=mid+1
-18        return(-1)            
+17                end=mid-1
+18        return(-1)                
+19       

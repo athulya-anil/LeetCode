@@ -1,4 +1,4 @@
-# Last updated: 19/03/2026, 15:08:18
+# Last updated: 19/03/2026, 15:08:20
 1class Solution(object):
 2    def search(self, nums, target):
 3        """

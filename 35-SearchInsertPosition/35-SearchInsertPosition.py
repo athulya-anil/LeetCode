@@ -1,4 +1,4 @@
-# Last updated: 19/03/2026, 15:12:52
+# Last updated: 19/03/2026, 15:13:36
 1class Solution(object):
 2    def searchInsert(self, nums, target):
 3        beg=0

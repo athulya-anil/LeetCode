@@ -1,4 +1,4 @@
-# Last updated: 25/03/2026, 15:25:21
+# Last updated: 25/03/2026, 15:44:36
 1import heapq
 2class Solution(object):
 3    def findKthLargest(self, nums, k):
@@ -7,13 +7,13 @@
 6        :type k: int
 7        :rtype: int
 8        """
-9        n=len(nums)
-10        for i in range (n):
-11            nums[i]=-nums[i]
-12
-13        heapq.heapify(nums)
-14
-15        for i in range(k-1):
-16            heapq.heappop(nums)
+9        min_heap=[]
+10        for num in nums:
+11            if len(min_heap)<k:
+12                heapq.heappush(min_heap,num)
+13            else:
+14                heapq.heappushpop(min_heap,num)    
+15
+16        return(min_heap[0])        
 17
-18        return(-heapq.heappop(nums))        
+18        

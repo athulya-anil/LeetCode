@@ -1,4 +1,4 @@
-# Last updated: 26/03/2026, 13:27:14
+# Last updated: 26/03/2026, 13:29:08
 1import heapq
 2from collections import Counter
 3
@@ -18,4 +18,4 @@
 17            else:
 18                heapq.heappushpop(heap,(freq,key))    
 19
-20        return [h[1] for h in heap]        
+20        return [num for freq, num in heap]        

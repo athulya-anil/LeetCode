@@ -1,4 +1,4 @@
-# Last updated: 25/03/2026, 15:22:18
+# Last updated: 26/03/2026, 17:32:39
 1import heapq
 2
 3class Solution(object):
@@ -7,23 +7,21 @@
 6        :type stones: List[int]
 7        :rtype: int
 8        """
-9        n=len(stones)
-10        for i in range(n):
-11            stones[i]=-stones[i]
-12
-13        heapq.heapify(stones)
-14        while len(stones)>1:
-15            largest=heapq.heappop(stones)
-16            second_largest=heapq.heappop(stones)
-17            if second_largest != largest:
-18                heapq.heappush(stones,largest-second_largest)
-19
-20        if len(stones) == 1:
-21            return(-heapq.heappop(stones))
-22        else:
-23            return 0        
-24
-25
+9
+10        n=len(stones)
+11        for i in range(n):
+12            stones[i]=-stones[i]
+13
+14        heapq.heapify(stones)
+15
+16        while len(stones)>1:
+17            largest=heapq.heappop(stones)
+18            second_largest=heapq.heappop(stones)
+19            if second_largest != largest:
+20                heapq.heappush(stones, largest-second_largest) # -8 +7
+21
+22        if len(stones)==1:
+23            return(-heapq.heappop(stones))
+24        else:
+25            return 0
 26
-27
-28        

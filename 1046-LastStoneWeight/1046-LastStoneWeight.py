@@ -1,27 +1,29 @@
-# Last updated: 26/03/2026, 17:32:39
+# Last updated: 30/03/2026, 18:31:18
 1import heapq
-2
-3class Solution(object):
-4    def lastStoneWeight(self, stones):
-5        """
-6        :type stones: List[int]
-7        :rtype: int
-8        """
-9
-10        n=len(stones)
-11        for i in range(n):
-12            stones[i]=-stones[i]
-13
-14        heapq.heapify(stones)
-15
-16        while len(stones)>1:
-17            largest=heapq.heappop(stones)
-18            second_largest=heapq.heappop(stones)
-19            if second_largest != largest:
-20                heapq.heappush(stones, largest-second_largest) # -8 +7
-21
-22        if len(stones)==1:
-23            return(-heapq.heappop(stones))
-24        else:
-25            return 0
+2class Solution(object):
+3    def lastStoneWeight(self, stones):
+4        """
+5        :type stones: List[int]
+6        :rtype: int
+7        """
+8        for i in range(len(stones)):
+9            stones[i]=-stones[i]
+10
+11        heapq.heapify(stones)    
+12
+13        while len(stones)>1:
+14            largest=heapq.heappop(stones)    
+15            second_largest=heapq.heappop(stones)    
+16
+17            if second_largest != largest:
+18                heapq.heappush(stones, largest-second_largest)
+19
+20        if len(stones)==1:
+21            return(-heapq.heappop(stones))
+22        else:
+23            return 0            
+24
+25            
 26
+27
+28        

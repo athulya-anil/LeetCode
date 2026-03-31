@@ -1,4 +1,4 @@
-# Last updated: 26/03/2026, 13:29:24
+# Last updated: 30/03/2026, 20:34:15
 1import heapq
 2from collections import Counter
 3
@@ -9,13 +9,14 @@
 8        :type k: int
 9        :rtype: List[int]
 10        """
-11        heap = []
-12        counter=Counter(nums)
+11        counter=Counter(nums)
+12        heap=[]
 13
-14        for key, freq in counter.items():
+14        for element,freq in counter.items():
 15            if len(heap)<k:
-16                heapq.heappush(heap,(freq,key))
+16                heapq.heappush(heap,(freq,element))
 17            else:
-18                heapq.heappushpop(heap,(freq,key))    
+18                heapq.heappushpop(heap,(freq,element))    
 19
-20        return [num for freq, num in heap]        
+20        return [element for freq,element in heap]
+21        

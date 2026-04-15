@@ -1,4 +1,4 @@
-# Last updated: 12/04/2026, 12:28:55
+# Last updated: 15/04/2026, 06:13:04
 1class Solution(object):
 2    def numIslands(self, grid):
 3        """
@@ -8,28 +8,21 @@
 7        island=0
 8        u=len(grid)
 9        v=len(grid[0])
-10
-11        def dfs(i,j):
-12            if i<0 or j<0 or i>=u or j>=v or grid[i][j] !="1":
-13                return 0
-14            else:
-15                grid[i][j]="0"
-16                dfs(i-1,j) 
-17                dfs(i+1,j)
-18                dfs(i,j-1)
-19                dfs(i,j+1)   
-20
-21        for i in range(u):
-22            for j in range(v):
-23                if grid[i][j]=="1":
-24                    island+=1
-25                    dfs(i,j)
-26
-27        return(island)        
-28
-29
-30        
-31            
-32
-33
-34
+10        def dfs(i,j):
+11            if i<0 or j<0 or i>=u or j>=v or grid[i][j]!="1":
+12                return 0
+13            else:
+14                grid[i][j]="0"
+15                dfs(i,j-1)
+16                dfs(i,j+1)
+17                dfs(i-1,j)
+18                dfs(i+1,j)    
+19
+20        for i in range (u):
+21            for j in range(v):
+22                if grid[i][j]== "1":
+23                    island+=1
+24                    dfs(i,j)
+25
+26        return (island)
+27        

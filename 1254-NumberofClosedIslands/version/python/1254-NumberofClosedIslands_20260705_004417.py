@@ -1,0 +1,31 @@
+# Last updated: 05/07/2026, 00:44:17
+1class Solution(object):
+2    def closedIsland(self, grid):
+3        """
+4        :type grid: List[List[int]]
+5        :rtype: int
+6        """
+7        u=len(grid)
+8        v=len(grid[0])
+9        island=0
+10
+11        def dfs(i,j):
+12            if i<0 or j<0 or i>=u or j>=v:
+13                return False
+14            if grid[i][j] == 1:
+15                return True
+16            grid[i][j] = 1
+17
+18            left=dfs(i,j-1)
+19            right=dfs(i,j+1)
+20            up=dfs(i+1,j)
+21            down=dfs(i-1,j)      
+22
+23            return(left and right and up and down)  
+24
+25        for i in range(u):
+26            for j in range(v):
+27                if grid[i][j]==0 and dfs(i,j):
+28                    island+=1
+29        return (island)            
+30        
